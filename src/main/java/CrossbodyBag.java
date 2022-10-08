@@ -6,6 +6,8 @@
  * helpful while working through this exercise.
  */
 
+import java.util.ArrayList;
+
 /*
  * TODO: Create a public class named CrossbodyBag which is a subclass of Bag
  *       In addition to the attributes in Bag, the CrossbodyBag should have an
@@ -30,3 +32,31 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+public class CrossbodyBag extends Bag{
+    private int NumberOfStraps;
+    private String color;
+    private int numberOfContents;
+    private int capacity;
+    private ArrayList<String> contents;
+
+    public CrossbodyBag(String color, int capacity, int Straps){
+        super(color,capacity);
+        NumberOfStraps = Straps;
+        this.color = color;
+        this.capacity = capacity;
+        numberOfContents = 0;
+        contents = new ArrayList<String>();
+
+    }
+    public void enhance() {
+        super.increaseCapacity(2);
+    }
+    public int getNumberOfStraps(){
+        enhance();
+        return NumberOfStraps;
+    }
+    public String toString() {
+        return this.color + " Crossbody Bag with " + this.NumberOfStraps + " straps ("+ this.numberOfContents + " / " +
+                this.capacity + ")";
+    }
+}
